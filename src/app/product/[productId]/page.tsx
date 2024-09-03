@@ -136,7 +136,7 @@ const Page = () => {
     sx={{maxWidth:'100%'}}
     component='h2'
   >
-    {weight}kg
+    {weight}g
   </Typography>
    </Box>}
 
