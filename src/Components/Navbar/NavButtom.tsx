@@ -130,7 +130,7 @@ fontWeight:300,fontSize:{xs:'.9em',sm:'1em'}}}>
           
     })
 } */}
-{/* <MenuHover img={'https://irrelevantlvng.com/img/cms/IMG_1323.JPG'} category={'Shop'} subcategories={['test','tes1']} /> */}
+<MenuHover img={''} category={'Categories'} subcategories={categories} />
 
 {/* <MenuHover img={'https://irrelevantlvng.com/img/cms/IMG_1323.JPG'} category={'collections'} subcategories={['22','33']} /> */}
 

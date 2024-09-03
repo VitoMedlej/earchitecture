@@ -7,6 +7,7 @@ import NestedMenuAccordion from '../Sidebar/NestedAccordion';
 
 
 const HoverMenu = ({ category, subcategories ,img } : {img:string,category: string, subcategories: {id:number,name:string}[]}) => {
+  const cates = subcategories.map((item:any) => `${item?.categoryName}`);
   const [showMenu, setShowMenu] = useState(false);
 
   const handleMouseEnter = () => {
@@ -21,10 +22,10 @@ const HoverMenu = ({ category, subcategories ,img } : {img:string,category: stri
       setShowMenu(false);
     }
   };
-  if (subcategories?.length < 1) return;
+  if (cates?.length < 1) return;
   return (
     <Box className='' sx={{
-      margin:'0 1em ',
+      margin:'0 .55em ',
       zIndex:12345678,
       maxHeight:'400px',
 
@@ -36,14 +37,14 @@ const HoverMenu = ({ category, subcategories ,img } : {img:string,category: stri
        onMouseEnter={handleMouseEnter}
        onMouseLeave={handleMouseLeave}
       
-        className=' cursor center flex gap1  decor-none captialize'
+        className=' cursor center flex   decor-none captialize'
         id="button"
-        component='h1' sx={{width:'max-content',
+        component='h2' sx={{width:'max-content',
         color:'white',
         // mx:'1em',
         alignItems: 'center',
         
-        fontWeight:500,fontSize:{xs:'.86em',sm:'.95em'}}}>
+        fontWeight:300,fontSize:{xs:'.86em',sm:'.95em'}}}>
      {category} 
     <AiOutlineDown/> 
    </Typography>
@@ -79,14 +80,14 @@ const HoverMenu = ({ category, subcategories ,img } : {img:string,category: stri
      </Typography>
             </li>
           </Link> */}
-            {subcategories && subcategories.map((subcategory) => (
-              <li style={{padding:' .25em 1em '}} className='' key={subcategory?.id}>
+            {cates && cates.map((subcategory) => (
+              <li style={{padding:' .25em 1em ',listStyle:'none'}} className='decor-none' key={subcategory}>
               <Link  className='black decor-none uppercase'
-                href={`/${category?.replace(/ /g, '-').toLocaleLowerCase()}/products?type=${ encodeURIComponent(`${subcategory?.name}`)?.toLocaleLowerCase()}`}>
+                href={`/${encodeURIComponent(subcategory)?.replace(/ /g, '-').toLocaleLowerCase()}/products`}>
                 
      <Typography onClick={()=>setShowMenu(false)} 
       component='p' sx={{width:'max-content',fontWeight:600,py:.15,fontSize:{xs:'.87em',sm:'.95em'}}}>
-                {subcategory?.name}
+                {subcategory}
      </Typography>
  </Link>
                 </li>

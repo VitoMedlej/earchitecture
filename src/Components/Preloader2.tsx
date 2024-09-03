@@ -78,7 +78,7 @@ const Preloader2 = ({ data, totalPages, categories }: any) => {
         newValue
       )}&min=${options.price[0]}&max=${options.price[1]}&type=${
         options.type
-      }&category=${options.category}`;
+      }&category=${encodeURIComponent(`${options?.category}`)?.replace(/ /g, '-').toLocaleLowerCase()}`;
       const req = await fetch(`${server}${url}`, {
         cache: "no-store",
         next: { revalidate: 0 },
@@ -89,7 +89,7 @@ const Preloader2 = ({ data, totalPages, categories }: any) => {
   
     return (
       <Container sx={{ mt: 0 }} disableGutters maxWidth="lg">
-        <Box className="flex items-center wrap" sx={{ my: 2, width: "100%" }}>
+        <Box className="flex items-center wrap" sx={{background:'white', my: 2, width: "100%" }}>
           <FilterSection
             handleSubmit={handleSubmit}
             options={options}
@@ -114,7 +114,7 @@ const Preloader2 = ({ data, totalPages, categories }: any) => {
               />
             ))
           ) : (
-            <Typography>No products found, try a different category...</Typography>
+            <Typography sx={{py:20}} className='center auto'>No products found, try a different category...</Typography>
           )}
         </Box>
         <Pagination
