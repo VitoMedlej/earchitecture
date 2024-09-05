@@ -124,7 +124,7 @@ export default function Navbar() {
                     </Toolbar>
 
                     {/* Render your SearchModal component */}
-                    {/* <SearchModal openModal={openModal} setOpenModal={setOpenModal} /> */}
+                    <SearchModal openModal={openModal} setOpenModal={setOpenModal} />
 
                 </AppBar>
 

@@ -7,9 +7,10 @@ import IconButton from '@mui/material/IconButton';
 // import MenuIcon from '@mui/icons-material/Menu';
 import {IoIosSearch} from 'react-icons/io'
 import { useRouter } from 'next/navigation';
+import { AnyAaaaRecord } from 'dns';
 // import DirectionsIcon from '@mui/icons-material/Directions';
 // 
-export default function SearchInput({sx,mobileHidden,handleSubmit,newValue}:{newValue?:string,mobileHidden?:boolean,sx?:any,handleSubmit?:any}) {
+export default function SearchInput({sx,mobileHidden,handleSubmit,newValue,handleClose}:{handleClose : any,newValue?:string,mobileHidden?:boolean,sx?:any,handleSubmit?:any}) {
   const router = useRouter()
   
   const [value,
@@ -18,6 +19,7 @@ export default function SearchInput({sx,mobileHidden,handleSubmit,newValue}:{new
         e.preventDefault()
         console.log('q: ', value);
         // if (value.length > 2) {
+          handleClose()
             router.push(`/collections/products?limit=80&search=${value}`)
         // }
     }
