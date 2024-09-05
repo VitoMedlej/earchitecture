@@ -10,7 +10,7 @@ function totalCal(cartItems: ICartItem[]) {
         if (item?._id && Number(item?.price)) {
             console.log('item?.weight: ', item?.weight);
             totalPrice += item?.qty * Number(item?.price);
-            const itemWeight = item?.weight ? Number(item?.weight) : 0; // Handle edge cases for weight
+            const itemWeight = item?.weight ? Number(item?.weight) / 1000 : 0; // Convert grams to kilograms
             totalWeight += item?.qty * itemWeight;
         }
     }
@@ -21,7 +21,6 @@ function totalCal(cartItems: ICartItem[]) {
     }
 
     return { totalPrice: Number(totalPrice), deliveryCharge };
-    console.log('deliveryCharge: ', deliveryCharge);
 }
 
 export default totalCal;
