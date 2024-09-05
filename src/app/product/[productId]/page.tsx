@@ -127,7 +127,7 @@ const Page = () => {
     {size}
   </Typography>
    </Box>}
-   {weight &&       <Box className='flex gap1' sx={{mt:4,borderBottom:'1px solid #00000025',px:1,py:.5}}>
+   {weight && Number(weight) > 0 &&       <Box className='flex gap1' sx={{mt:4,borderBottom:'1px solid #00000025',px:1,py:.5}}>
       <Typography component='h1'>
       Weight:
       </Typography>
@@ -136,7 +136,7 @@ const Page = () => {
     sx={{maxWidth:'100%'}}
     component='h2'
   >
-    {weight}g
+    {Number(weight) / 1000}g
   </Typography>
    </Box>}
 
