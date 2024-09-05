@@ -56,7 +56,10 @@ const Page = () => {
   useEffect(() => {
     if (product) {
       setPrice(typeof product.newPrice === 'number' && 
-        Number(product.newPrice) >= 0 ? Number(product.newPrice) :  Number(product.price));
+        Number(product.newPrice) >= 0 ? Number(product.newPrice) :  sizes && 
+        sizes?.length > 0 ?
+        Number(sizes[0]?.price) : 
+        Number(product.price));
 
         console.log('sizes ? ${sizes[0]?.size} ', sizes ? `${sizes[0]?.size}` : size || '');
         setSelectedSize(sizes ? `${sizes[0]?.size}` : size || '');
