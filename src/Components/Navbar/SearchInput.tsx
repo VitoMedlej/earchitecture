@@ -17,7 +17,6 @@ export default function SearchInput({sx,mobileHidden,handleSubmit,newValue,handl
     setValue] = React.useState(newValue ? newValue : '');
     const handleSearch = (e : React.FormEvent < HTMLFormElement >) => {
         e.preventDefault()
-        console.log('q: ', value);
         // if (value.length > 2) {
           handleClose()
             router.push(`/collections/products?limit=80&search=${value}`)

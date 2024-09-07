@@ -13,7 +13,8 @@ const useCart = () => {
         newValue?: number,
         productselectedSize?: string,
         productselectedColor?: any,
-        newPrice?: number
+        newPrice?: number,
+        weight ?: number,
     ) => {
         const state = loadState('VZJo2p4j1op2cgfG221zGG') || [];
         let foundIndex = state.findIndex((value: ICartItem) => value._id === _id);
@@ -32,6 +33,9 @@ const useCart = () => {
 
             if (productselectedColor) {
                 selectedItem.productselectedColor = productselectedColor;
+            }
+            if (weight) {
+                selectedItem.weight = weight;
             }
 
             // Update the price if a new price is provided
@@ -69,7 +73,8 @@ const useCart = () => {
             selectedQuantity,
             product?.productselectedSize,
             product?.productselectedColor,
-            product.price
+            product.price,
+            product?.weight
         );
 
         if (increased) {

@@ -17,7 +17,6 @@ export default function TemporaryDrawer() {
     const {cartOpen,
         setCartOpen} = useCartContext();
         const [cartItems,setCartItems] = useState<ICartItem[]>([])
-        console.log('cartItems: ', cartItems);
 
         useEffect(() =>{
             let localCart : ICartItem[] = loadState('VZJo2p4j1op2cgfG221zGG') || []

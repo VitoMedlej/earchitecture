@@ -20,11 +20,12 @@ interface Product {
   newPrice?: number;
   sizes?: { size: string; price: string }[];
   colors ?: string[];
+  // multisize not mutli lol
+  mutlisize ?: boolean;
 }
 
 const Page = () => {
   const [product, setProduct] = useState<Product | null>(null);
-  console.log('product: ', product);
 
 
   const [error, setError] = useState<string | null>(null);
@@ -33,7 +34,7 @@ const Page = () => {
 
   const [currentPrice, setPrice] = useState<number>(0);
   const [selectedColor, setColor] = useState<string | null>(null);
-  console.log('selectedColor: ', selectedColor);
+  const [selectedWeight, setSelectedWeight] = useState<number>(0);
   const [selectedSize, setSelectedSize] = useState<string>('');
 
 
@@ -61,7 +62,6 @@ const Page = () => {
         Number(sizes[0]?.price) : 
         Number(product.price));
 
-        console.log('sizes ? ${sizes[0]?.size} ', sizes ? `${sizes[0]?.size}` : size || '');
         setSelectedSize(sizes ? `${sizes[0]?.size}` : size || '');
         setColor(colors? colors[0] : null);
     }
@@ -73,7 +73,6 @@ const Page = () => {
   const {colors, size, weight, images, description, title, sizes, category } = product;
 
   const handleCart = () => {
-    console.log('selectedSize: ', size);
     const itemToAdd = {
       title,
       category,
@@ -82,7 +81,8 @@ const Page = () => {
       price: currentPrice,
       productselectedSize:selectedSize && selectedSize != 'undefined' ? selectedSize : size || '',
       productselectedColor: selectedColor,
-      weight: weight ? Number(weight) : 0
+      weight: 
+      product?.mutlisize === true ? Number(selectedWeight ? selectedWeight : weight) : Number(weight) || 0
     };
   
     addToCart(1, `${productId}`, itemToAdd);
@@ -107,7 +107,10 @@ const Page = () => {
           </Typography>
 
           <Box>
-          {sizes && sizes[0]?.size?.length > 0 &&  <SelectWeight  selectedSize={selectedSize} setSelectedSize={setSelectedSize} setPrice={setPrice} sizes={sizes} />}
+          {sizes && sizes[0]?.size?.length > 0 &&  <SelectWeight 
+          
+          setSelectedWeight={setSelectedWeight}
+          selectedSize={selectedSize} setSelectedSize={setSelectedSize} setPrice={setPrice} sizes={sizes} />}
             <SelectColor setColor={setColor} colors={colors} />
           </Box>
           <Box>
@@ -139,7 +142,7 @@ const Page = () => {
     sx={{maxWidth:'100%'}}
     component='h2'
   >
-    {Number(weight) / 1000}kg
+    {product?.mutlisize === true ? Number(selectedWeight ? selectedWeight : weight) : Number(weight) || 0 / 1000}kg
   </Typography>
    </Box>}
 

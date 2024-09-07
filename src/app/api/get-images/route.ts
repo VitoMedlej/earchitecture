@@ -23,7 +23,6 @@ try {
     .find({})
     .limit(1)
     .toArray()
-    console.log('Imgs2: ', Images, Images2);
 
 
     if (!Images) {

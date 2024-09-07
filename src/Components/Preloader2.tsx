@@ -10,7 +10,6 @@ import ProductCard from './ProductCard/ProductCard'
 import { useCategoriesContext } from '@/context/Contexts'
 
 const Preloader2 = ({ data, totalPages, categories }: any) => {
-  console.log('data: ', data);
     const router = useRouter();
     const { setCategories } = useCategoriesContext();
   
