@@ -91,7 +91,7 @@ export default function Navbar() {
                                 left: { xs: '50%' },
                                 transform: { xs: 'translateX(-50%)' },
                                 width: { xs: '100px', sm: 'auto' },
-                                height: {xs:'75px',sm:'100%'}
+                                height: {xs:'90%',sm:'95%'}
                             }}
                         >
                             <img 
