@@ -83,7 +83,7 @@ export default function Checkout() {
 
     const saveOrder = async () => {
       
-
+     const orderTotal = Number(totalPrice + deliveryCharge).toFixed(2)
       // const total = 10
       if (products && info && totalPrice) {
 
@@ -94,7 +94,7 @@ export default function Checkout() {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({order:{info,products,totalPrice,isFirstOrder}})
+            body: JSON.stringify({order:{info,products,totalPrice,isFirstOrder,orderTotal}})
         });
   const content = await rawResponse.json();
         setOrderNumber(content?.orderNumber)
