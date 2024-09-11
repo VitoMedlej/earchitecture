@@ -99,9 +99,6 @@ export default function Navbar() {
                         </Box>
 
 
-
-                      
-
                         <Box className="flex flex1 flex-end">
                             <Box
                                 onClick={() => setOpenModal(!openModal)}
