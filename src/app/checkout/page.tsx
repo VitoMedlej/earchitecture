@@ -41,7 +41,9 @@ export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [orderNumber, setOrderNumber] = React.useState(null);
   const products = loadState('VZJo2p4j1op2cgfG221zGG');
+  console.log('products: ', products);
   const {totalPrice, deliveryCharge} = totalCal(products); 
+  console.log('deliveryCharge: ', deliveryCharge);
   
 
   const {isFirstOrder} = useDiscount(totalPrice)

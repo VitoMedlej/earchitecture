@@ -10,13 +10,16 @@ function totalCal(cartItems: ICartItem[]) {
         if (item?._id && Number(item?.price)) {
             console.log('item?.weight: ', item?.weight);
             totalPrice += item?.qty * Number(item?.price);
-            const itemWeight = item?.weight ? Number(item?.weight) / 1000 : 0; // Convert grams to kilograms
+            const itemWeight = item?.weight ? Number(item?.weight)  : 0; // Convert grams to kilograms
             totalWeight += item?.qty * itemWeight;
         }
     }
 
     let deliveryCharge = 4; // Base delivery charge for up to 5KG
+    console.log('totalWeight less: ', totalWeight);
     if (totalWeight > 5) {
+    console.log('totalWeight more: ', totalWeight);
+
         deliveryCharge += (totalWeight - 5) * 0.5; // Additional charge for weight over 5KG
     }
 
