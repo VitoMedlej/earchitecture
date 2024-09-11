@@ -161,7 +161,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                         }}
                             className='auto animate-on-scroll'>
                             <img
-                                src="https://ucarecdn.com/ef9e8c99-4558-495c-8039-f41a83c85de2/242214612_543534960062485_9063518498744690892_n.jpg"
+                                src="https://ucarecdn.com/60c53ecd-b275-4f71-825e-8a242097f60d/living.jpg"
                                 alt=""
                                 className="img"/>
                         </Box>
@@ -271,7 +271,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                         }}
                             className='auto animate-on-scroll'>
                             <img
-                                src="https://ucarecdn.com/e11e417e-c2f6-4db0-ba26-2ddf617d705f/441467704_18026046482497211_4006659562523391908_n.jpg"
+                                src="https://ucarecdn.com/e1c621a8-eddb-446d-a25d-373fbe32953c/bath.jpg"
                                 alt=""
                                 className="img"/>
                         </Box>
@@ -293,7 +293,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                         }}
                             className='auto animate-on-scroll'>
                             <img
-                                src="https://ucarecdn.com/bf9ce434-b2bb-4f60-bd4b-8451e5c6c87f/442420529_18026584604497211_668027106191694083_n.jpg"
+                                src="https://ucarecdn.com/fe62511b-2890-48e2-a3ba-5f3eeae355fd/bath2.jpg"
                                 alt=""
                                 className="img"/>
                         </Box>
