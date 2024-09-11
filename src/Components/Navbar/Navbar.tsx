@@ -55,16 +55,16 @@ export default function Navbar() {
                         margin: '0 auto'
                     }}
                 >
-                    {/* <Box className='center bg  w100 text-center' sx={{ minWidth: '90vw', 
-                       width: '100%', py: 0.25 }}>
-                        <Typography  component='h1'
+                    <Box className='center bg  w100 text-center' sx={{ minWidth: '90vw', 
+                       width: '100%', py: 0.25,borderBottom:'1px solid gray' }}>
+                        <Typography  component='p'
                          sx={{ 
                             fontWeight:500,
                             color:"white",
-                         py: 0.4, fontSize: { xs: '.75em', sm: '.85em' } }}>
-                          Delivery all over Lebanon
+                         py: 0.4, fontSize: { xs: '.65em', sm: '.85em' } }}>
+                      {`Delivery: $4 for orders up to 5 kg, then $0.5 per extra kg.`}
                         </Typography>
-                    </Box> */}
+                    </Box>
 
                     <Toolbar className='flex bg relative center items-center'
                     
