@@ -18,7 +18,7 @@ interface Product {
   category: string;
   size?: string;
   newPrice?: number;
-  sizes?: { size: string; price: string }[];
+  sizes?: { size: string; price: string; weight?: any }[];
   colors ?: string[];
   // multisize not mutli lol
   mutlisize ?: boolean;
@@ -26,6 +26,8 @@ interface Product {
 
 const Page = () => {
   const [product, setProduct] = useState<Product | null>(null);
+  console.log('product: ', product);
+ 
 
 
   const [error, setError] = useState<string | null>(null);
@@ -35,9 +37,10 @@ const Page = () => {
   const [currentPrice, setPrice] = useState<number>(0);
   const [selectedColor, setColor] = useState<string | null>(null);
   const [selectedWeight, setSelectedWeight] = useState<number>(0);
+  console.log('selectedWeight: ', selectedWeight);
   const [selectedSize, setSelectedSize] = useState<string>('');
 
-
+  const productHasWeight = selectedWeight || product?.weight
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -133,7 +136,11 @@ const Page = () => {
     {size}
   </Typography>
    </Box>}
-   {weight && Number(weight) > 0 &&       <Box className='flex gap1' sx={{mt:4,borderBottom:'1px solid #00000025',px:1,py:.5}}>
+
+   { productHasWeight
+   
+   
+   &&       <Box className='flex gap1' sx={{mt:4,borderBottom:'1px solid #00000025',px:1,py:.5}}>
       <Typography component='h1'>
       Weight:
       </Typography>
@@ -144,6 +151,7 @@ const Page = () => {
   >
     {product?.mutlisize === true ? Number(selectedWeight ? selectedWeight : weight) : Number(weight) || 0 / 1000}kg
   </Typography>
+
    </Box>}
 
             <Box sx={{px:1,pt:4,maxWidth:'600px'}}>
