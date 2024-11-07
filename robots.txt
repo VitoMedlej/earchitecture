@@ -1,0 +1,10 @@
+# Allow all search engines to index the site
+User-agent: *
+Disallow: /cart/   # Block access to the shopping cart if you don’t want it indexed
+Disallow: /checkout/  # Block access to checkout pages
+
+# Allow everything else to be crawled
+Allow: /
+
+# Sitemap
+Sitemap: https://earchitecture-lb.com/sitemap.xml

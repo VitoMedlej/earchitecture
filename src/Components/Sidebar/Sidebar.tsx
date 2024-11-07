@@ -123,7 +123,10 @@ export default function TemporaryDrawer() {
           } */}
 
 {
-            categories?.map((cate:{categoryName:string,subcategories:any})=>{
+            categories
+            ?.sort((a: { categoryName: string }, b: { categoryName: string }) => 
+              a.categoryName.localeCompare(b.categoryName))
+            .map((cate: { categoryName: string; subcategories: any }) => {
 
               return <Accordion key={`${cate?.categoryName}`} sx={{border:'none',boxShadow:'none',}}>
             
@@ -164,7 +167,9 @@ export default function TemporaryDrawer() {
 </ListItemButton>
 </ListItem>
 
-{cate?.subcategories?.map((a:any)=>{   return  <ListItem sx={{padding:0,width:'100%'}}
+{cate?.subcategories?.map((a:any)=>{ 
+ 
+    return  <ListItem sx={{padding:0,width:'100%'}}
 
 onClick={()=>
 {setOpen(false);

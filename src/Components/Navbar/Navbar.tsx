@@ -81,7 +81,7 @@ export default function Navbar() {
                                 sx={{ width: '25px', padding: 1, 
                                     display: { xs: 'flex', md: 'none' } }}
                             >
-                                <img style={{ filter: 'invert(1)' }} src="https://cdn-icons-png.flaticon.com/128/4219/4219090.png" alt="" className="img cover" />
+                                <img style={{ filter: 'invert(1)' }} src="https://cdn-icons-png.flaticon.com/128/4219/4219090.png" alt="side bar menu icon" className="img cover" />
                             </Box>
                         <Box
                             onClick={() => router.push('/')}
@@ -105,7 +105,7 @@ export default function Navbar() {
                                 className='cursor pointer flex center items-center'
                                 sx={{ display:{xs:'flex',md:'none'}, width: '20px', padding: 1 }}
                             >
-                                <img style={{ filter: 'invert(1)' }} src="https://cdn-icons-png.flaticon.com/128/9177/9177086.png" alt="" className="img" />
+                                <img style={{ filter: 'invert(1)' }} src="https://cdn-icons-png.flaticon.com/128/9177/9177086.png" alt="Search Icon" className="img" />
                             </Box>
 
                             <Box
@@ -113,7 +113,7 @@ export default function Navbar() {
                                 className='cursor pointer flex center items-center'
                                 sx={{ width: '20px', padding: 1 }}
                             >
-                                <img style={{ filter: 'invert(1)' }} src="https://cdn-icons-png.flaticon.com/128/5337/5337564.png" alt="" className="img" />
+                                <img style={{ filter: 'invert(1)' }} src="https://cdn-icons-png.flaticon.com/128/5337/5337564.png" alt="Bag icon" className="img" />
                             </Box>
 
                         

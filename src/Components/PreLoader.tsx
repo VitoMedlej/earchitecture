@@ -162,7 +162,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                             className='auto animate-on-scroll'>
                             <img
                                 src="https://ucarecdn.com/60c53ecd-b275-4f71-825e-8a242097f60d/living.jpg"
-                                alt=""
+                                alt="Modern Table Image"
                                 className="img"/>
                         </Box>
                     </Grid>
@@ -272,7 +272,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                             className='auto animate-on-scroll'>
                             <img
                                 src="https://ucarecdn.com/e1c621a8-eddb-446d-a25d-373fbe32953c/bath.jpg"
-                                alt=""
+                                alt="Bath Decor Image"
                                 className="img"/>
                         </Box>
                     </Grid>
@@ -294,7 +294,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                             className='auto animate-on-scroll'>
                             <img
                                 src="https://ucarecdn.com/fe62511b-2890-48e2-a3ba-5f3eeae355fd/bath2.jpg"
-                                alt=""
+                                alt="Modern Bath Image"
                                 className="img"/>
                         </Box>
                     </Grid>
@@ -399,12 +399,26 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                           Timeless Design, Modern Living
                             </Typography>
                             <Typography sx={{
-                                maxWidth:'600px',
-                                textAlign:{xs:'center',sm:'flex-end'},
-                                pt:1,color:'white',fontSize:{xs:'.8em',md:'.9em'},fontWeight:300}}>
-                          {` At E.Architecture, we bring your vision to life with furniture that combines contemporary style and industrial strength. Each piece is crafted with precision, ensuring it stands the test of time while enhancing your living space. Whether you're transforming a room or just adding a final touch, our designs are made to make a statement.`}
+    maxWidth: '650px',
+    textAlign: { xs: 'center', sm: 'flex-end' },
+    pt: 1,
+    color: 'white',
+    fontSize: { xs: '.8em', md: '.9em' },
+    fontWeight: 300
+  }}>
+  {`Discover premium metal furniture in Lebanon with E.Architecture. Our designs blend modern aesthetics with industrial durability, offering pieces that elevate any space. Whether you're renovating your home or adding a distinctive touch to your living room, each handcrafted item is built to last while enhancing your home decor. Transform your space with furniture that stands out for its quality and design.`}
 </Typography>
-                          
+
+<Typography sx={{
+    maxWidth: '650px',
+    textAlign: { xs: 'center', sm: 'flex-end' },
+    pt: 1,
+    color: 'white',
+    fontSize: { xs: '.8em', md: '.9em' },
+    fontWeight: 300
+  }}>
+  {`E.Architecture brings handcrafted metal furniture to Lebanon, combining function and style. From statement pieces to practical additions for your office, our designs integrate seamlessly into any interior. Elevate your home with our carefully crafted, timeless furniture that makes every room feel unique. Shop today for distinctive, long-lasting pieces that add character to your space.`}
+</Typography>
                             <Btn  
                             onClick={()=>router.push('/collection/products')}
                             v2 className='center ' sx={{mt:'1em',mx:''}}>
@@ -413,6 +427,9 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                       </Box>
             </Box>
 
+
+
+                 
         </Box>
     )
 }
