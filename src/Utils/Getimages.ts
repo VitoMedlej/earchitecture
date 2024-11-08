@@ -6,7 +6,7 @@ export const Getimages = async () => {
     
     const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-images?tkn=${process.env.token}`
       
-      ,{next:{revalidate:0}}
+      ,{next:{revalidate:100}}
     );
     const data = await res.json();
     return data;

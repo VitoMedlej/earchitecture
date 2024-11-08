@@ -3,11 +3,13 @@ import { Box, Typography } from '@mui/material';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import {AiOutlineDown} from 'react-icons/ai'
-import NestedMenuAccordion from '../Sidebar/NestedAccordion';
+// import NestedMenuAccordion from '../Sidebar/NestedAccordion';
 
 
-const HoverMenu = ({ category, subcategories ,img } : {img:string,category: string, subcategories: {id:number,name:string}[]}) => {
-  const cates = subcategories.map((item:any) => `${item?.categoryName}`);
+const HoverMenu = ({ category, subcategories ,img } : {img:string,category: string, subcategories: {id:number,name:string, categoryName?:any}[]}) => {
+  const cates = subcategories
+  .sort((a, b) => a.categoryName.localeCompare(b.categoryName))
+  .map((item: any) => `${item?.categoryName}`);
   const [showMenu, setShowMenu] = useState(false);
 
   const handleMouseEnter = () => {
