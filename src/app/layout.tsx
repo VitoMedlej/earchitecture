@@ -4,7 +4,7 @@ import '../Styles/qty.css'
 import Footer from '@/Components/Footer/Footer'
 import Sidebar from '@/Components/Sidebar/Sidebar'
 import ScrollToTop from '@/Components/ScrollToTop/ScrollToTop'
-import QuickCart from '@/Components/Shared/QuickCart/QuickCart'
+import QuickCart from '@/Components/Shared/QuickCart/QuickCart';
 import ContextWrapper from '@/context/Contexts'
 
 export const metadata = {
@@ -22,10 +22,14 @@ export default function Layout({children} : {
     return (
         <html lang="en">
             <head>
+     
             <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" />
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&family=Lora:wght@400&display=swap" rel="stylesheet"/>
-           
+{/* <link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&family=Lora:wght@400&display=swap" rel="stylesheet"/> */}
+     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&family=Lora:wght@400&display=swap" as="style" />
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&family=Lora:wght@400&display=swap"/>
+</noscript>      
 
 <meta name="keywords" content="home decor Lebanon, metal furniture Lebanon, Lebanese home decor, premium home accessories, handcrafted furniture Lebanon, interior design Lebanon, modern home decor, stylish furniture Lebanon, high-quality furniture" />
 
@@ -42,7 +46,7 @@ export default function Layout({children} : {
 <meta name="twitter:image" content="https://ucarecdn.com/c9d6219c-d35c-4f91-a252-73ce3e75b5af/ealogo.PNG" />
 <meta name="twitter:card" content="summary_large_image" />
 
-<link rel="canonical" href="https://earchitecture-lb.com" />
+<link rel="canonical" href="https://earchitecture-lb.com/" />
 <link rel="icon" href="https://ucarecdn.com/c9d6219c-d35c-4f91-a252-73ce3e75b5af/ealogo.PNG" />
            </head>
 

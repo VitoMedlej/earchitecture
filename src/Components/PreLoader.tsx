@@ -39,8 +39,8 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
     const {setCategories} = useCategoriesContext()
     const router = useRouter();
     // const collection = data?.slice(0, Number(data?.length / 2))
-    const collection1 = data?.slice(0, 4)
-    const collection2 = data?.slice(4, 100)
+    const collection1 = data?.slice(0, 12)
+    const collection2 = data?.slice(12, 100)
     // const carouselProducts = data?.slice(Number(data?.length / 2), 50)
 
 
@@ -161,7 +161,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                         }}
                             className='auto animate-on-scroll'>
                             <img
-                                src="https://ucarecdn.com/60c53ecd-b275-4f71-825e-8a242097f60d/living.jpg"
+                                src="https://ucarecdn.com/60c53ecd-b275-4f71-825e-8a242097f60d/-/resize/600/"
                                 alt="Modern Table Image"
                                 className="img"/>
                         </Box>
@@ -271,7 +271,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                         }}
                             className='auto animate-on-scroll'>
                             <img
-                                src="https://ucarecdn.com/e1c621a8-eddb-446d-a25d-373fbe32953c/bath.jpg"
+                                src="https://ucarecdn.com/e1c621a8-eddb-446d-a25d-373fbe32953c/-/resize/600/"
                                 alt="Bath Decor Image"
                                 className="img"/>
                         </Box>
@@ -293,7 +293,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                         }}
                             className='auto animate-on-scroll'>
                             <img
-                                src="https://ucarecdn.com/fe62511b-2890-48e2-a3ba-5f3eeae355fd/bath2.jpg"
+                                src="https://ucarecdn.com/fe62511b-2890-48e2-a3ba-5f3eeae355fd/-/resize/600/"
                                 alt="Modern Bath Image"
                                 className="img"/>
                         </Box>
@@ -366,7 +366,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
             <HomeProductsCarousel
             text=''
              delay={4000} Collectiontitle={'Best Sellers'}
-              data={collection1}/>
+              data={collection2}/>
 
 
             <Box className='relative' sx={{mt:8,mb:12,height:{xs:'500px',sm:'500px'}}}>

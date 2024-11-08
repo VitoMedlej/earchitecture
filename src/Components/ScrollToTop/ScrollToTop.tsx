@@ -32,7 +32,7 @@ const ScrollUp = () => {
     boxShadow:`rgba(0, 0, 0, 0.24) 0px 3px 8px`,
     padding:0,':hover':{background:'transparent'}}}>
       <Box className='center flex align-center' sx={{width:'30px',ml:1}}>
-      <img src="https://www.7979.org.my/uploads/1/2/6/3/126376279/whatsapp-icon_1.png" alt="Whatsapp Icon" className="img" />
+      <img src="https://ucarecdn.com/0410dd04-a33f-424b-8443-abdef2cb66a5/-/resize/50/" alt="Whatsapp Icon" className="img" />
       </Box>
          <Box sx={{mr:1,background:'white',py:1,px:2,borderRadius:25,color:'black'}}>
          +961 81 303 139
