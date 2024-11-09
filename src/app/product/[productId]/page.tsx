@@ -46,7 +46,8 @@ const Page = () => {
   product?.sizes && product?.sizes?.length > 0 ?
   product?.sizes[0]?.weight
   : product?.weight
-  : 0;
+  : product?.weight;
+
   console.log('productWeight: ', productWeight);
 
   useEffect(() => {
