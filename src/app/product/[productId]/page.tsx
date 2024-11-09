@@ -42,7 +42,7 @@ const Page = () => {
   const [selectedSize, setSelectedSize] = useState<string>('');
 
   const productHasWeight = selectedWeight && selectedWeight !== null ? selectedWeight  : product?.sizes && product?.sizes?.length > 0 ? product?.sizes[0]?.weight : product?.weight
-
+  const productWeight = 
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -153,6 +153,9 @@ const Page = () => {
   >
     {product?.mutlisize === true ?
      Number(selectedWeight ? selectedWeight : weight) :
+     product?.sizes && product?.sizes?.length > 0 && product?.sizes[0]?.weight ?
+        Number(product?.sizes[0]?.weight) / 1000
+        :
       Number(weight) || 0 / 1000}kg
   </Typography>
 
