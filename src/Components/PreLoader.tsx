@@ -114,7 +114,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
             </Box> */}
 
             <HomeProductsCarousel
-            text=''
+            text='Explore Our'
              delay={4000} Collectiontitle={'Latest Collections'}
               data={collection1}/>
 
@@ -364,7 +364,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
 
 
             <HomeProductsCarousel
-            text=''
+            text='Browse Our'
              delay={4000} Collectiontitle={'Best Sellers'}
               data={collection2}/>
 

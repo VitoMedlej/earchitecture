@@ -41,8 +41,14 @@ const Page = () => {
 
   const [selectedSize, setSelectedSize] = useState<string>('');
 
-  const productHasWeight = selectedWeight && selectedWeight !== null ? selectedWeight  : product?.sizes && product?.sizes?.length > 0 ? product?.sizes[0]?.weight : product?.weight
-  const productWeight = 
+  const productWeight = product?.mutlisize ? 
+  selectedWeight && selectedWeight > 0 ? selectedWeight :
+  product?.sizes && product?.sizes?.length > 0 ?
+  product?.sizes[0]?.weight
+  : product?.weight
+  : 0;
+  console.log('productWeight: ', productWeight);
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -116,7 +122,10 @@ const Page = () => {
           
           setSelectedWeight={setSelectedWeight}
           selectedSize={selectedSize} setSelectedSize={setSelectedSize} setPrice={setPrice} sizes={sizes} />}
+            { product?.colors && product?.colors?.length > 0 &&
             <SelectColor setColor={setColor} colors={colors} />
+
+            }
           </Box>
           <Box>
             
@@ -139,8 +148,7 @@ const Page = () => {
   </Typography>
    </Box>}
 
-   { productHasWeight !== null
-   
+   { productWeight   
    
    &&       <Box className='flex gap1' sx={{mt:4,borderBottom:'1px solid #00000025',px:1,py:.5}}>
       <Typography component='h1'>
@@ -151,12 +159,10 @@ const Page = () => {
     sx={{maxWidth:'100%'}}
     component='h2'
   >
-    {product?.mutlisize === true ?
-     Number(selectedWeight ? selectedWeight : weight) :
-     product?.sizes && product?.sizes?.length > 0 && product?.sizes[0]?.weight ?
-        Number(product?.sizes[0]?.weight) / 1000
-        :
-      Number(weight) || 0 / 1000}kg
+    {
+productWeight
+      
+    }kg
   </Typography>
 
    </Box>}

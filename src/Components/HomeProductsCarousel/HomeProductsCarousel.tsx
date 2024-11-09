@@ -46,7 +46,7 @@ const ProductCollection = ({sx,delay,text,Collectiontitle,data,setQuickView} : {
   px:1,
   fontWeight:'300',
   fontSize:{xs:'.8em',sm:'1em'},
-  }} component='h1' className='black animate-on-scroll text-center  '>
+  }} component='h2' className='black animate-on-scroll text-center  '>
      EXPLORE OUR
   </Typography>
 <Typography sx={{

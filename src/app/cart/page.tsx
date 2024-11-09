@@ -42,7 +42,7 @@ const EmptyCartAlert = () => {
                         alt="Empty Cart Image"
                         className="img"/>
                 </Box>
-                <Typography fontSize='1.5em' component='h1' sx={{pb:1}} fontWeight='300'>
+                <Typography fontSize='1.5em' component='h3' sx={{pb:1}} fontWeight='300'>
                     Empty, add some items!
                 </Typography>
               
@@ -98,7 +98,7 @@ const Cart = () => {
             px: 1
         }}>
       {cartItems?.length >0 &&      <Typography
-      component='h1'
+      component='h2'
                 sx={{
                 fontSize: '1.5em',
                 padding: 1,
@@ -143,7 +143,7 @@ const Cart = () => {
                     // boxShadow:'1px 1px 3px #0000002b'
                 }}>
                   
-                    <Typography component='h1' sx={{
+                    <Typography component='h2' sx={{
                         ...titleStyle
                     }}>Order Summary</Typography>
                   
