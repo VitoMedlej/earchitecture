@@ -15,7 +15,8 @@ const Preloader2 = ({ data, totalPages, categories }: any) => {
   
     const [newValue, setNewValue] = useState<string>("");
     const [products, setProducts] = useState<any[]>(data);
-    const { category } = useParams();
+    const { category , page } = useParams();
+    console.log('page: ', page);
     const searchParams = useSearchParams();
     const type = searchParams.get("type");
     const subCategory = searchParams.get("subCategory");
@@ -27,6 +28,7 @@ const Preloader2 = ({ data, totalPages, categories }: any) => {
     }, [categories, setCategories]);
   
     const fetchData = async (val: number) => {
+      console.log('val: ', val);
       const url = `/api/get-cate?category=${category ?? "all"}&search=${
         newValue ? encodeURIComponent(newValue) : ""
       }&page=${Number(val) - 1 || 0}&type=${type ?? ""}`;
@@ -35,7 +37,7 @@ const Preloader2 = ({ data, totalPages, categories }: any) => {
         next: { revalidate: 0 },
       });
       const res = await req.json();
-  
+      
       setProducts(res?.data?.products ?? []);
 
       totalPages = res?.data?.totalPages ?? 1;

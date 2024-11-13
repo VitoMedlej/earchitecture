@@ -8,10 +8,13 @@ function totalCal(cartItems: ICartItem[]) {
 
     for (const item of cartItems) {
         if (item?._id && Number(item?.price)) {
-            console.log('item?.weight: ', item?.weight);
+            
             totalPrice += item?.qty * Number(item?.price);
+            
             const itemWeight = item?.weight ? Number(item?.weight)  : 0; // Convert grams to kilograms
+            
             totalWeight += item?.qty * itemWeight;
+
         }
     }
 

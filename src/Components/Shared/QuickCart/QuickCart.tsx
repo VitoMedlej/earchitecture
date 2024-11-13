@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Divider from '@mui/material/Divider';
 import {IconButton, Typography} from '@mui/material';
-import { useRouter } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import { ICartItem } from '@/Types/Types';
 import { useCartContext } from '@/context/Contexts';
 import { loadState, saveState } from '@/Utils/LocalstorageFn';
@@ -38,6 +38,14 @@ export default function TemporaryDrawer() {
         saveState('VZJo2p4j1op2cgfG221zGG', state);
         setCartItems(state);
     }
+  const {category} = useParams()
+
+    const route = () => {
+        const cate = category ? `${encodeURIComponent(`${category}`)?.toLocaleLowerCase()}` : 'collections' 
+        setCartOpen(false);
+        router.push(`/${cate}/products`);
+    }  
+
     return (
         <div>
             <Drawer  anchor={'top'} open={cartOpen} onClose={toggleDrawer(false)}>
@@ -126,7 +134,7 @@ export default function TemporaryDrawer() {
                     background:'none',
                           my:1,
                             }}
-                        onClick={()=>{setCartOpen(false),router.push('/collections/products')}}
+                        onClick={()=>route()}
                          >
                         Continue Shopping
                         </Btn>

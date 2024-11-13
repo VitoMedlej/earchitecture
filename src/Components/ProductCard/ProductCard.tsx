@@ -66,6 +66,7 @@ const ProductCard = ({
         }}
       >
         <img
+        // src=""
           src={images ? `${images[0]}/-/resize/500/` : ""}
           alt="Product image"
           className="img cover"

@@ -3,6 +3,7 @@ import Btn from '@/Components/Btn/Btn';
 import ProductImageCarousel from '@/Components/ProductImageCarousel/ProductImageCarousel'
 import SelectColor from '@/Components/SelectColor/SelectColor';
 import SelectWeight from '@/Components/SelectWeight/SelectWeight';
+import { QuantityPicker } from '@/Components/Shared/QuantityPicker/QuantityPicker';
 import useCart from '@/Hooks/useCart';
 import { Box, Typography } from '@mui/material'
 import Link from 'next/link';
@@ -35,6 +36,10 @@ const Page = () => {
   const { addToCart } = useCart();
 
   const [currentPrice, setPrice] = useState<number>(0);
+  const [qtySelected, setQuantity] = useState<number>(1);
+  console.log('qtySelected: ', qtySelected);
+  
+  
   const [selectedColor, setColor] = useState<string | null>(null);
   const [selectedWeight, setSelectedWeight] = useState<number>(0);
   
@@ -86,19 +91,19 @@ const Page = () => {
 
   const handleCart = () => {
     const itemToAdd = {
-      title,
-      category,
-      img: images?.length > 0 ? images[0] : '',
-      _id: `${productId}`,
-      price: currentPrice,
-      productselectedSize:selectedSize && selectedSize != 'undefined' ? selectedSize : size || '',
-      productselectedColor: selectedColor,
-      weight: 
-      product?.mutlisize === true ? Number(selectedWeight ? selectedWeight : weight) : Number(weight) || 0
+        title,
+        category,
+        img: images?.length > 0 ? images[0] : '',
+        _id: `${productId}`,
+        qtySelected: qtySelected || 1,
+        price: currentPrice,
+        productselectedSize: selectedSize && selectedSize !== 'undefined' ? selectedSize : size || '',
+        productselectedColor: selectedColor,
+        weight: product?.mutlisize ? Number(selectedWeight || weight) : Number(weight) || 0
     };
-  
-    addToCart(1, `${productId}`, itemToAdd);
-  };
+
+    addToCart(qtySelected || 1, `${productId}`, itemToAdd);
+};
 
   return (
     <Box sx={{ maxWidth: 'lg', pt: 2 }} className='lg auto'>
@@ -128,13 +133,27 @@ const Page = () => {
 
             }
           </Box>
+    
           <Box>
-            
-            <Btn 
+            <Box className='flex row '>
+            <Box sx={{width:{xs:'100px',md:'200px'}}}>
+
+<QuantityPicker
+onChange={setQuantity}
+width='100%'
+max={20}
+min={1}
+value={qtySelected}
+></QuantityPicker>
+</Box>
+            <Btn  
             onClick={()=>handleCart()}
-            sx={{width:'100%',my:1,border:'1px solid'}}>
+            sx={{
+              padding:0,
+              width:{xs:'150px',sm:'250px',md:'100%'},my:1,border:'1px solid'}}>
               ADD TO CART
             </Btn>
+              </Box>
 
      {size &&       <Box className='flex gap1' sx={{mt:4,borderBottom:'1px solid #00000025',px:1,py:.5}}>
       <Typography component='h1'>
