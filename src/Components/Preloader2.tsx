@@ -15,10 +15,12 @@ const Preloader2 = ({ data, totalPages, categories }: any) => {
   
     const [newValue, setNewValue] = useState<string>("");
     const [products, setProducts] = useState<any[]>(data);
-    const { category , page } = useParams();
-    console.log('page: ', page);
+    const { category  } = useParams();
     const searchParams = useSearchParams();
     const type = searchParams.get("type");
+    const page = searchParams.get("page");
+    console.log('page: ', page);
+    
     const subCategory = searchParams.get("subCategory");
   
     useEffect(() => {
@@ -28,7 +30,11 @@ const Preloader2 = ({ data, totalPages, categories }: any) => {
     }, [categories, setCategories]);
   
     const fetchData = async (val: number) => {
-      console.log('val: ', val);
+      const currentPath = window.location.pathname; // Get the current path
+  const newUrl = `${currentPath}?page=${val}`;
+  
+  router.push(newUrl);
+
       const url = `/api/get-cate?category=${category ?? "all"}&search=${
         newValue ? encodeURIComponent(newValue) : ""
       }&page=${Number(val) - 1 || 0}&type=${type ?? ""}`;
@@ -119,6 +125,7 @@ const Preloader2 = ({ data, totalPages, categories }: any) => {
           )}
         </Box>
         <Pagination
+          page={Number(page) ? Number(page) : 1}
           onChange={(e, val) => fetchData(val)}
           sx={{ my: 3 }}
           count={totalPages > 1 ? totalPages : 1}

@@ -73,7 +73,7 @@ const Page = () => {
 
   useEffect(() => {
     if (product) {
-      setPrice(typeof Number(product?.newPrice) === 'number' && 
+      setPrice(product?.newPrice && typeof Number(product?.newPrice) === 'number' && 
         Number(product.newPrice) >= 0 ? Number(product.newPrice) :  sizes && 
         sizes?.length > 0 ?
         Number(sizes[0]?.price) : 
