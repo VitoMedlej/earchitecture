@@ -56,7 +56,7 @@ const Footer = () => (
           <Box className="flex wrap col gap1">
 
           <a href={`${process.env.NEXT_PUBLIC_INSTA}`} target={'_blank'}  className='white decor-none' style={{fontSize:'.8em'}}>
-          @EArchitecture.lb_
+          @E.architecturelb
           </a>
           <a href={`${process.env.NEXT_PUBLIC_WA}`} target={'_blank'}  className='white decor-none' style={{fontSize:'.8em'}}>
           +{process.env.NEXT_PUBLIC_WA}
