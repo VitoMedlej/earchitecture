@@ -19,7 +19,7 @@ export const Getproducts = async () => {
 
   
   const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/get-data?tkn=${process.env.token}`
-    ,{next:{revalidate:0}}
+    ,{next:{revalidate:100}}
   );
   const data = await res.json();
   if (!data) return null;

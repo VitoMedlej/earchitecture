@@ -41,5 +41,5 @@ const Home = async () => {
   )
 }
 
-export const revalidate = 100
+// export const revalidate = 100
 export default Home
