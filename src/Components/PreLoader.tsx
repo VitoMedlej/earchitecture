@@ -13,6 +13,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // import Perks from './ContactSection/ContactSection'
 import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 import FullscreenPoster from './FullscreenPoster/FullscreenPoster'
+import Testimonials from './Testimonials/Testimonials'
 // import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
 // import ContentBlock from './ContentBlock/ContentBlock'
 // import HomeProductsCarousel from './HomeProductsCarousel/HomeProductsCarousel'
@@ -402,6 +403,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
     maxWidth: '650px',
     textAlign: { xs: 'center', sm: 'flex-end' },
     pt: 1,
+    px:1,
     color: 'white',
     fontSize: { xs: '.8em', md: '.9em' },
     fontWeight: 300
@@ -409,7 +411,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
   {`Discover premium metal furniture in Lebanon with E.Architecture. Our designs blend modern aesthetics with industrial durability, offering pieces that elevate any space. Whether you're renovating your home or adding a distinctive touch to your living room, each handcrafted item is built to last while enhancing your home decor. Transform your space with furniture that stands out for its quality and design.`}
 </Typography>
 
-<Typography sx={{
+{/* <Typography sx={{
     maxWidth: '650px',
     textAlign: { xs: 'center', sm: 'flex-end' },
     pt: 1,
@@ -418,7 +420,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
     fontWeight: 300
   }}>
   {`E.Architecture brings handcrafted metal furniture to Lebanon, combining function and style. From statement pieces to practical additions for your office, our designs integrate seamlessly into any interior. Elevate your home with our carefully crafted, timeless furniture that makes every room feel unique. Shop today for distinctive, long-lasting pieces that add character to your space.`}
-</Typography>
+</Typography> */}
                             <Btn  
                             onClick={()=>router.push('/collection/products')}
                             v2 className='center ' sx={{mt:'1em',mx:''}}>
@@ -427,9 +429,44 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                       </Box>
             </Box>
 
+  {/* <Testimonials/> */}
 
+  <Container disableGutters maxWidth="lg" sx={{ px:2, py: 4 }}>
+      <Typography component="h1" align="left" sx={{ fontSize:'1.42em',fontWeight:600, mb: 4 }}>
+        Steel & Metal Furniture That Transforms Your Space
+      </Typography>
+      <Grid container spacing={4}>
+        {/* First Block */}
+        <Grid item xs={12} sm={4}>
+          <Box sx={{ textAlign: 'left' }}>
+          <Typography sx={{fontWeight:700, fontSize:'1.4em',pb:.5}} component='h2'>Durability That Lasts</Typography>
+            <Typography variant="body2">
+              Our handcrafted steel furniture is built to endure. Made from high-quality metals, every piece is designed to withstand years of use—perfect for both modern homes and commercial spaces.
+            </Typography>
+          </Box>
+        </Grid>
 
-                 
+        {/* Second Block */}
+        <Grid item xs={12} sm={4}>
+          <Box sx={{ textAlign: 'left' }}>
+          <Typography sx={{fontWeight:700, fontSize:'1.4em',pb:.5}} component='h2'>Sustainably Made</Typography>
+            <Typography variant="body2">
+              We’re committed to sustainability. From using recyclable metals to reducing our carbon footprint, we’re making sure that your furniture doesn’t just look good—it’s good for the planet, too.
+            </Typography>
+          </Box>
+        </Grid>
+
+        {/* Third Block */}
+        <Grid item xs={12} sm={4}>
+          <Box sx={{ textAlign: 'left' }}>
+            <Typography sx={{fontWeight:700, fontSize:'1.4em',pb:.5}} component='h2'>Timeless Design</Typography>
+            <Typography variant="body2">
+              Elevate your home with sleek, timeless designs. Whether you’re outfitting a cozy apartment or a spacious office, our metal furniture adds a unique, modern touch that stands the test of time.
+            </Typography>
+          </Box>
+        </Grid>
+      </Grid>
+    </Container> 
         </Box>
     )
 }

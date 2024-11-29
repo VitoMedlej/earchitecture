@@ -45,7 +45,6 @@ const Testimonial = () => {
 
 
  
-  const {text} = useLanguage()
     
     
   return (
@@ -65,7 +64,7 @@ const Testimonial = () => {
                 flex:1,
                 fontWeight: '500'
             }}>
-              {text('Our Customers speak for us', 'عملاؤنا يتحدثون عنا')}
+              {`Our Customer's reviews`}
 
             </Typography>
             </Box>
