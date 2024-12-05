@@ -12,7 +12,7 @@ const Footer = () => (
           <Grid container className='auto' sx={{py:4,px:2,maxWidth:'md'}} >
             <Grid item xs={12} sm={6} lg={6}>
               <Box sx={{width:'50px'}}>
-                <img src="https://ucarecdn.com/c9d6219c-d35c-4f91-a252-73ce3e75b5af/ealogo.PNG" alt="" className="img" />
+                <img src="https://ucarecdn.com/c9d6219c-d35c-4f91-a252-73ce3e75b5af/ealogo.PNG" alt="earchitecture Lb Brand Logo" className="img" />
               </Box>
               <Box>
                   <Typography sx={{maxWidth:'300px',fontSize:'.7em',color:'white'}}>

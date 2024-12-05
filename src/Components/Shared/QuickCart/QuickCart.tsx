@@ -63,14 +63,14 @@ export default function TemporaryDrawer() {
                         mx: '1em',
                         justifyContent: 'space-between'
                     }}>
-                        <h2 
+                        <h4 
                         onClick={()=>{setCartOpen(false),router.push('/cart')}}
                             style={{
                             cursor:'pointer',
                             fontWeight: '500',
                         }}>
                              Your Cart
-                        </h2>
+                        </h4>
                         <IconButton onClick={toggleDrawer(false)}>
                             <GrFormClose
                                 color='red'

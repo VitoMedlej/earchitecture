@@ -31,7 +31,7 @@ const Perks = () => {
                     py:2,
                     width:{xs:'47%',sm:'30%',md:'22%'}}}>
                     <Box sx={{width:'150px'}}>
-                        <img src={i.icon} alt="" className="img contain" />
+                        <img src={i.icon} alt={`Perks Icon`} className="img contain" />
                     </Box>
                     <Box sx={{ml:.7}} className="flex col">
 

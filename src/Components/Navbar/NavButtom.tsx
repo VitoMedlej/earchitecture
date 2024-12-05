@@ -50,7 +50,7 @@ const NavButtom = ({categories}:any) => {
 <Typography 
 className=' cursor center  flex gap1 white decor-none captialize'
 
-component='h2' sx={{width:'max-content',
+component='h4' sx={{width:'max-content',
 mx:'.55em',
 alignItems: 'center',
 ':hover':{
@@ -65,7 +65,7 @@ Home
 <Typography 
 className=' cursor center flex gap1 white decor-none captialize'
 
-component='h2' sx={{width:'max-content',
+component='h4' sx={{width:'max-content',
 mx:'.55em',
 alignItems: 'center',
 ':hover':{
@@ -80,7 +80,7 @@ About
 <Typography 
 className=' cursor center flex gap1 white decor-none captialize'
 
-component='h2' sx={{width:'max-content',
+component='h4' sx={{width:'max-content',
 mx:'.55em',
 alignItems: 'center',
 ':hover':{

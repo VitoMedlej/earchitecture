@@ -68,7 +68,7 @@ const ProductCard = ({
         <img
         // src=""
           src={images ? `${images[0]}/-/resize/500/` : ""}
-          alt="Product image"
+          alt={`${title} Product Image`}
           className="img cover"
         />
       </Box>

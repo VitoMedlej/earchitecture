@@ -92,14 +92,14 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,productse
                     }}>
                        {category}
                     </Typography>
-                    <h2
+                    <h3
                         style={{
                         fontSize: '.85em',
                         fontWeight: '600',
                         margin: ' .35em 0 0 0'
                     }}>
                         ${price}
-                    </h2>
+                    </h3>
                     {/* <h2
                         style={{
                         fontSize: '1.2em',

@@ -162,7 +162,7 @@ value={qtySelected}
    <Typography 
     className='gray' 
     sx={{maxWidth:'100%'}}
-    component='h2'
+    component='h3'
   >
     {size}
   </Typography>
@@ -177,7 +177,7 @@ value={qtySelected}
    <Typography 
     className='gray' 
     sx={{maxWidth:'100%'}}
-    component='h2'
+    component='h4'
   >
     {
 productWeight

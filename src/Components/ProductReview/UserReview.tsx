@@ -21,7 +21,7 @@ const UserReview = () => {
                         borderRadius: '50%'
                     }}
                         src="https://scholar.harvard.edu/sites/scholar.harvard.edu/files/dancabral/files/download_0.jpeg?m=1583405578"
-                        alt=""
+                        alt="User Icon"
                         className="img"/>
                 </Box>
 

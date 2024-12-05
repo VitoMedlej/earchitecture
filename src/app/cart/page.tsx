@@ -143,7 +143,7 @@ const Cart = () => {
                     // boxShadow:'1px 1px 3px #0000002b'
                 }}>
                   
-                    <Typography component='h2' sx={{
+                    <Typography component='h4' sx={{
                         ...titleStyle
                     }}>Order Summary</Typography>
                   

@@ -6,6 +6,7 @@ import Sidebar from '@/Components/Sidebar/Sidebar'
 import ScrollToTop from '@/Components/ScrollToTop/ScrollToTop'
 import QuickCart from '@/Components/Shared/QuickCart/QuickCart';
 import ContextWrapper from '@/context/Contexts'
+import Script from 'next/script'
 
 export const metadata = {
     title: `E.Architecture - Home Decor & Metal Furniture in Lebanon`,
@@ -48,6 +49,19 @@ export default function Layout({children} : {
 
 <link rel="canonical" href="https://earchitecture-lb.com/" />
 <link rel="icon" href="https://ucarecdn.com/c9d6219c-d35c-4f91-a252-73ce3e75b5af/ealogo.PNG" />
+           
+<Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-TDEM2DVPJ6"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TDEM2DVPJ6');
+        `}
+      </Script>
            </head>
 
             <body className='relative bg3'>
