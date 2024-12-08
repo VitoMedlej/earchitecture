@@ -23,23 +23,59 @@ import useLanguage from '@/Hooks/useLanguage';
 //             name:`Powerhouse’s Owner `,img:'https://ucarecdn.com/3b40bedc-0aa3-4247-a196-fd05de4d4f87/003011.jpg'}
 
 // ]
-const tests = [
+const testimonials = [
   {
-    title: "Discover the Power of DIY CRAFTS!",
-    reviewer: "(Ella, Health Enthusiast)",
-    description: "DIY CRAFTS is a true haven for health and wellness enthusiasts like myself. Their premium selection of natural supplements is a game-changer. From the revitalizing effects of ashwagandha to the vitality boost of tongkat ali, they have it all. I've experienced a remarkable improvement in my overall well-being since I started incorporating their products into my daily routine. DIY CRAFTS is my go-to destination for all my health and wellness needs!",
+    title: "Very satisfied!",
+    reviewer: "Nathalie",
+    description: "Just received the tray. Very satisfied!",
   },
   {
-    title: "A Wellness Oasis with DIY CRAFTS!",
-    reviewer: "(Oliver, Fitness Fanatic)",
-    description: "When it comes to my fitness journey, DIY CRAFTS has been a true ally. Their range of natural supplements, including cordyceps and lion's mane mushroom, has been a game-changer in my routine. The quality of their products is unparalleled, and I've seen significant improvements in my energy levels and mental clarity. DIY CRAFTS is my one-stop-shop for all things related to health and wellness. I can't recommend them enough!",
+    title: "Top-notch quality!",
+    reviewer: "Mailo",
+    description: "The quality is top! I'm so satisfied.",
   },
   {
-    title: "DIY CRAFTS: Your Path to Optimal Health!",
-    reviewer: "(Ava, Wellness Advocate)",
-    description: "As a wellness advocate, I'm always on the lookout for high-quality supplements, and DIY CRAFTS has exceeded my expectations. Their comprehensive range of natural products, including ashwagandha, tongkat ali, cordyceps mushroom, and more, is a testament to their commitment to well-being. Whether you're a health enthusiast or someone looking to enhance their overall health, DIY CRAFTS is the answer. Trust me; you won't be disappointed!",
+    title: "Lebanese craftsmanship at its best!",
+    reviewer: "Rana",
+    description: "Can't believe that these products are made in Lebanon. Thank you so much! I loved each item I ordered.",
+  },
+  {
+    title: "High-end quality products",
+    reviewer: "John",
+    description: "Just wanted to thank you for the high-end quality.",
+  },
+  {
+    title: "Superb quality!",
+    reviewer: "Michele",
+    description: "Suuuuperbe!",
+  },
+  {
+    title: "Beautiful wall art",
+    reviewer: "Gracia",
+    description: "The wall art is amazing and the craftsmanship is very clean. Thank you so much!",
+  },
+  {
+    title: "Delighted with the bathroom shelf",
+    reviewer: "Aziz",
+    description: "I am delighted to have received the bathroom shelf from the creative @e.architecturelb.",
+  },
+  {
+    title: "Superb bathroom accessories",
+    reviewer: "Jessica",
+    description: "The bathroom accessories I ordered are superb. Thank you, thank you!",
+  },
+  {
+    title: "Perfectly delivered items",
+    reviewer: "Pascale",
+    description: "I would like to thank E.architecture for the items you sent. I received my order yesterday, and everything was in order. Merci beaucoup!",
+  },
+  {
+    title: "Amazed by the wall clock",
+    reviewer: "Dalal",
+    description: "I just want to tell you how much I am amazed! The wall clock is such a piece of art. I love it so much. Thank you!",
   },
 ];
+
 
 const Testimonial = () => {
 
@@ -51,20 +87,21 @@ const Testimonial = () => {
     <Box className=' flex col ' sx={{width:'100%',height:'100%'}}>
  <Box className='flex col'  sx={{flex:1,width:'100%',pt:'6em'}}>
  <Typography
-                className='sectionTitle  text-center auto center box'
-                sx={{
-                  pb:'.5em',
-                  pt:4,
-                  width:'100%',
-                  display:'flex',
-                  fontSize: {
-                    xs: '1.62em',
-                    sm: '2em',md:'2.5em'
-                },
-                flex:1,
-                fontWeight: '500'
-            }}>
-              {`Our Customer's reviews`}
+                                sx={{
+                                width: '100%',
+                                pt: {
+                                    xs: 0,
+                                    sm: 0
+                                },
+                                fontSize: {
+                                    xs: '1.4em',
+                                    sm: '2em'
+                                },
+                                fontWeight: 300
+                            }}
+                                component='h1'
+                                className='color text-center auto w100 black animate-on-scroll '>
+              {`Authentic Testimonials`}
 
             </Typography>
             </Box>
@@ -93,25 +130,25 @@ const Testimonial = () => {
             
                 // navigation={true}
                 spaceBetween={10}
-                slidesPerView={2}
+                slidesPerView={1.1}
                 breakpoints={
  {// when window width is >= 320px
  320: {
-    slidesPerView:1,
+    slidesPerView:1.1,
     spaceBetween: 20
   },
   // when window width is >= 480px
   480: {
-    slidesPerView: 1,
+    slidesPerView: 1.1,
     spaceBetween: 20
   },
   // when window width is >= 640px
   640: {
-    slidesPerView: 2,
+    slidesPerView: 2.1,
     spaceBetween: 20
   },
   940: {
-    slidesPerView: 3,
+    slidesPerView: 3.1,
     spaceBetween: 20
   }
 
@@ -121,15 +158,15 @@ const Testimonial = () => {
                 modules={[ Autoplay]}
               >
 
-                {tests.map((item ) => {
-                    if (!item.title) 
+                {testimonials.map((item) => {
+                    if (!item.description) 
                         return
                     return <SwiperSlide
                         style={{
                         padding:'2em 0',
                         marginRight: '0 !important'
                     }}
-                        key={item.title}>
+                        key={item.description}>
                          <TestimonialCard title={item.title} reviewer={item.reviewer} description={item.description}/>
 
                     </SwiperSlide>

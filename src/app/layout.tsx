@@ -46,8 +46,8 @@ export default function Layout({children} : {
 <meta name="twitter:description" content="Explore premium home decor and handcrafted metal furniture from E.Architecture, your go-to online store in Lebanon." />
 <meta name="twitter:image" content="https://ucarecdn.com/c9d6219c-d35c-4f91-a252-73ce3e75b5af/ealogo.PNG" />
 <meta name="twitter:card" content="summary_large_image" />
-
-<link rel="canonical" href="https://earchitecture-lb.com/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://ucarecdn.com/c9d6219c-d35c-4f91-a252-73ce3e75b5af/ealogo.PNG" />
+<link rel="canonical" href="https://www.earchitecture-lb.com" />
 <link rel="icon" href="https://ucarecdn.com/c9d6219c-d35c-4f91-a252-73ce3e75b5af/ealogo.PNG" />
            
 <Script

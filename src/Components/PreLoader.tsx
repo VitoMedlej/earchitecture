@@ -384,8 +384,8 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                           />
                       </Box>
                       <Box className='absolute  animate-on-scroll  w100 center auto flex col' sx={{
-                           
-                            top: {xs:'20%',sm:`20%`},
+                            transform: `translate(0, -50%)`,
+                            top: {xs:'50%',sm:`50%`},
                             alignItems:{xs:'center',sm:'center'},
                             // width: 'fit-content',
                        zIndex:'1234'}}>
@@ -411,7 +411,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
   {`Discover premium metal furniture in Lebanon with E.Architecture. Our designs blend modern aesthetics with industrial durability, offering pieces that elevate any space. Whether you're renovating your home or adding a distinctive touch to your living room, each handcrafted item is built to last while enhancing your home decor. Transform your space with furniture that stands out for its quality and design.`}
 </Typography>
 
-{/* <Typography sx={{
+<Typography sx={{
     maxWidth: '650px',
     textAlign: { xs: 'center', sm: 'flex-end' },
     pt: 1,
@@ -420,7 +420,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
     fontWeight: 300
   }}>
   {`E.Architecture brings handcrafted metal furniture to Lebanon, combining function and style. From statement pieces to practical additions for your office, our designs integrate seamlessly into any interior. Elevate your home with our carefully crafted, timeless furniture that makes every room feel unique. Shop today for distinctive, long-lasting pieces that add character to your space.`}
-</Typography> */}
+</Typography>
                             <Btn  
                             onClick={()=>router.push('/collection/products')}
                             v2 className='center ' sx={{mt:'1em',mx:''}}>
@@ -429,7 +429,7 @@ const PreLoader = ({data, resImages, categories, secondSectionImage} : any) => {
                       </Box>
             </Box>
 
-  {/* <Testimonials/> */}
+  <Testimonials/>
 
   <Container disableGutters maxWidth="lg" sx={{ px:2, py: 4 }}>
       <Typography component="h1" align="left" sx={{ fontSize:'1.42em',fontWeight:600, mb: 4 }}>

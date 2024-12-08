@@ -9,21 +9,19 @@ const TestimonialCard = ({title,reviewer,description}:{title:string,reviewer:str
         <Box
         className='auto flex center col '
             sx={{
-                background:'white',
-                boxShadow:'1px 1px 3px #00000014',
+                background: `#ffffff8a`,
+                border: `1px solid #0000001a`,
+                boxShadow:'1px 1px 3px #0000001',
                 px:2,
                 maxWidth:'500px',
-                maxHeight:'400px',
-                borderBottom: '1px solid white'
+                height:{xs:'150px'},
         }}>
 
             <Box className="flex">
             
-
-
             </Box>
-<Box sx={{pt:4}}>
-<Rating sx={{mb:.25}} readOnly value={5}></Rating>
+<Box className='flex center' sx={{pt:2}}>
+<Rating  sx={{mb:.25}} readOnly value={5}></Rating>
 
 </Box>
 
@@ -31,18 +29,18 @@ const TestimonialCard = ({title,reviewer,description}:{title:string,reviewer:str
             // className='clr'
                 sx={{
                     // color:'#f8f8f8',
-                fontWeight: 300,
                     maxWidth:'500px',
                 pt: 1.25,
+                fontWeight:500,
                 fontSize: 14
             }}
                 component={'p'}>{description}</Typography>
                  <Typography
-            className='color2'
+            className=''
                 sx={{
                     // color:'#f8f8f8',
                     fontStyle:'italic',
-                fontWeight: 400,
+                fontWeight: 600,
                     maxWidth:'300px',
                 pb:4,
                 pt:1,
