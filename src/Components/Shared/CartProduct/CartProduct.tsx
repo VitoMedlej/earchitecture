@@ -150,10 +150,15 @@ const CartProduct = ({onChange,_id,price,category,title,remove,qty,img,productse
                         }}/>
                         
                     </IconButton> */}
-                    <QuantityPicker 
-                    onChange={(e:number)=>{incrementQty(_id,e),onChange && onChange()}}
-                    
-                    min={1} max={10} value={qty > 10 ? 10 : qty}/>
+<QuantityPicker 
+    onChange={(newValue: number) => {
+        incrementQty(_id, newValue, productselectedSize, productselectedColor, price);
+        onChange && onChange();
+    }}
+    min={1} 
+    max={10} 
+    value={qty > 10 ? 10 : qty}
+/>
                 </Box>
             </Box>
         </Box>
