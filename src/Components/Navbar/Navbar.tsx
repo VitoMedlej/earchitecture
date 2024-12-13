@@ -62,7 +62,7 @@ export default function Navbar() {
                             fontWeight:500,
                             color:"white",
                          py: 0.4, fontSize: { xs: '.65em', sm: '.85em' } }}>
-                      {`Delivery: $4 for orders up to 5 kg, then $0.5 per extra kg.`}
+                      {`Delivery: $4 for orders up to 10 kg, then $0.5 per extra kg.`}
                         </Typography>
                     </Box>
 
