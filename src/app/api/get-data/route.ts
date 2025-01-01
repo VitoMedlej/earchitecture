@@ -11,7 +11,6 @@ try {
         .db("EA")
         .collection("Products");
     let featuredProducts : any = [];
-    let products : any = []
 
     const featuredProductsQuery = await ProductsCollection
         // .find({isFeatured: true})
