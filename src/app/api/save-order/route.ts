@@ -338,15 +338,15 @@ async function sendAdminNotificationEmail(orderId: string, order: any[], discoun
                 ${order.map(product => {
                     if (!product?._id) return '';
                     return `
-                        <div class="product">
-                            <div style="max-width:150px;max-height:150px;min-height:50px;">
-                                <img src='${product?.img}' alt="Product Image">
-                            </div>
-                            <div class="product-details">
-                                <p class="product-title">${product?.title}</p>
-                                <p class="product-description">Quantity: ${product?.qty}</p>
-                            </div>
-                        </div>
+                        <div class="product" style="display: flex; margin-bottom: 20px;">
+                <div style="max-width:150px;max-height:150px;min-height:50px;">
+                    <img src='${product?.img}' alt="Product Image" style="width:100%; height:auto;">
+                </div>
+                <div class="product-details" style="flex-grow: 1; margin-left: 10px;">
+                    <p class="product-title">${product?.title}</p>
+                    <p class="product-description">Quantity: ${product?.qty}</p>
+                </div>
+            </div>
                     `;
                 }).join('')}
         
