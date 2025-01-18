@@ -7,7 +7,6 @@ try {
     ,{next:{revalidate:100}}
   );
   const data = await res.json();
-  console.log('data: ', data);
   return data;
 }
 catch(err) {

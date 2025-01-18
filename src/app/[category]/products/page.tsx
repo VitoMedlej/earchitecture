@@ -14,7 +14,6 @@ const Page = async(ctx : any) => {
   try {
     const {category} = ctx?.params
     const {type,search,subcategory, page} = ctx?.searchParams;
-    console.log('page: ', page);
 
     const categoriesData = await Getcategories()
 

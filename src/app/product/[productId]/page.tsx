@@ -8,7 +8,6 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const productId = params.productId;
-  console.log('productId: ', productId);
 
 
   const response = await fetch(`https://www.earchitecture-lb.com/api/get-by-id?id=${productId}`, {
@@ -23,7 +22,6 @@ export async function generateMetadata(
 
   const data = await response.json();
   const productTitle = data?.product?.title ? `${data?.product?.title} - Earchitecture-lb`:  'Product Page - Earchitecture-lb';
-  console.log('productTitle: ', productTitle);
 
   return {
     title: productTitle,
@@ -42,7 +40,6 @@ const page = async (ctx : any) => {
   if (!response.ok) throw new Error(`Error: ${response.statusText}`);
   
   const data = await response.json();
-  console.log('data: ', data);
   return (
     <>
     {data && <DynamicProductClient data={data} />}

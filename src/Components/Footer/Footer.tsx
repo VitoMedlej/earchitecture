@@ -69,7 +69,7 @@ const Footer = () => (
           </Grid>
           <Box className='flex  center auto' sx={{background:'#01242b',py:1,color:'white'}}>
             <Typography component='p' sx={{fontSize:'.8em'}}>
-            Site Developed By <span><a target='_blank' href='https://onbeirut.com'>OnBeirut Agency</a></span>
+            Site Developed By <span><a target='_blank' href='https://wavescode.com'>OnBeirut Agency</a></span>
             </Typography>
           </Box>
       </Box>

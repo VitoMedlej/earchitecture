@@ -19,9 +19,7 @@ function totalCal(cartItems: ICartItem[]) {
     }
 
     let deliveryCharge = 4; // Base delivery charge for up to 10KG
-    console.log('totalWeight less: ', totalWeight);
     if (totalWeight > 10) {
-    console.log('totalWeight more: ', totalWeight);
 
         deliveryCharge += (totalWeight - 10) * 0.5; // Additional charge for weight over 10KG
     }

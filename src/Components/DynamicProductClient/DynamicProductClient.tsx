@@ -35,7 +35,6 @@ const Page = ({data} : {data:any}) => {
 
   const [currentPrice, setPrice] = useState<number>(0);
   const [qtySelected, setQuantity] = useState<number>(1);
-  console.log('qtySelected: ', qtySelected);
   
   
   const [selectedColor, setColor] = useState<string | null>(null);
@@ -51,7 +50,6 @@ const Page = ({data} : {data:any}) => {
   : product?.weight
   : product?.weight;
 
-  console.log('productWeight: ', productWeight);
 
   useEffect(() => {
     // const fetchProduct = async () => {
