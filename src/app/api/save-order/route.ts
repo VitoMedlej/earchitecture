@@ -29,208 +29,178 @@ const transporter = nodemailer.createTransport({
 
         // Create dynamic HTML content based on the order data
         const htmlContent = `
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <style>
-                body {
-                    font-family: Arial, sans-serif;
-                    margin: 0;
-                    padding: 0;
-                    background-color: #f4f4f4;
-                }
-                
-                .container {
-                    max-width: 600px;
-                    margin: 20px auto;
-                    padding: 20px;
-                    background-color: #fff;
-                    border-radius: 5px;
-                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                }
-                
-                header {
-                    text-align: center;
-                    padding-bottom: 10px;
-                    border-bottom: 1px solid #ccc;
-                }
+       <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Your Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header img {
+            width: 80px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            color: #333333;
+            margin: 0;
+        }
+
+        .order-summary {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .order-summary h2 {
+            font-size: 1.2rem;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        .product-item {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        .product-item:last-child {
+            border-bottom: none;
+        }
+
+        .product-item img {
+            width: 70px;
+            height: auto;
+            margin-right: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .product-details {
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-weight: bold;
+            font-size: 1rem;
+            color: #333333;
+            margin: 0 0 5px;
+        }
+
+        .product-quantity {
+            font-size: 0.9rem;
+            color: #666666;
+            margin: 0;
+        }
+
+        .order-total {
+            text-align: right;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #333333;
+            margin-top: 20px;
+        }
+
+        .cta-buttons {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .cta-buttons a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #007bff;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .cta-buttons a:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px 10px;
+            background-color: #333333;
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://ucarecdn.com/c9d6219c-d35c-4f91-a252-73ce3e75b5af/ealogo.PNG" alt="EArchitecture Logo">
+            <h1>Thank You for Your Order!</h1>
+            <p>Your order has been received and is being processed. Order ID: ${orderId}</p>
+        </header>
         
-                h1 {
-                    color: #333;
-                }
+        <div class="order-summary">
+
+            <h2>Order Details</h2>
+
         
-                p {
-                    color: #666;
-                }
-        
-                .buttons {
-                    text-align: center;
-                    margin: 0 auto;
-                    color: white;
-                    margin-top: 20px;
-                    width:max-content;
-                    
-                }
-        
-                .button {
-                    display: inline-block;
-                    padding: 10px 20px;
-                    text-decoration: none;
-                    color: white !important;
-                    margin-top:4px !important;
-                    width:max-content;
-                    background-color: #2a393c;
-                    border-radius: 3px;
-                }
-        
-                .order-id {
-                    margin-top: 20px;
-                    color: #333;
-                }
-        
-                .product {
-                    margin-top: 20px;
-                    border-top: 1px solid #ccc;
-                    padding-top: 10px;
-                    display: flex;
-                }
-        
-                .product img {
-                    max-width: 150px;
-                    max-height: 150px;
-                    margin-right: 10px;
-                }
-        
-                .product-details {
-                    flex-grow: 1;
-                }
-        
-                .product-title {
-                    font-weight: bold;
-                    color: #333;
-                }
-        
-                .product-description {
-                    color: #666;
-                }
-        
-                .product-price {
-                    color: #333;
-                }
-                .centered {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin:0 auto;
-                }
-                .class12 {
-                    padding:1;
-                    objectFit:contain !important;
-                    width: 100px !important;
-                    height: 100px !important;
-                }
-                .font1 {
-                    font-size:1.2em;
-                }
-                footer {
-                    background-color: #333;
-                    color: white;
-                    margin: 0 auto;
-                    padding: 20px;
-                    text-align: center;
-                  }
-              
-                  footer a {
-                    text-align: center;
-                    margin: 0 auto;
-                    color: white;
-                    text-decoration: none;
-                  }
-                  .col {
-                    flex-direction: column;
-                  }
-            </style>
-        </head>
-        <body>
-            <div class="container">
-                <header>
-                <div class='class12'>
-    <img
-    style="width:100px;height:100px"
-        class='img contain'
-        src="https://ucarecdn.com/c9d6219c-d35c-4f91-a252-73ce3e75b5af/ealogo.PNG"
-        alt="EArchitecture logo"/> 
-</div>
-                <h1>EArchitecture</h1>
-                <p>Thank you for shopping with us! Your order is confirmed and will be processed shortly.</p>
-                </header>
-        
-                <div class="buttons">
-                    <a href="https://wa.me/+96181303139" class="button">Reach Us</a>
-                    <a href="https://earchitecture-lb.com/" class="button">Visit Our Website</a>
+            ${order.map(product => `
+            <div class="product-item">
+                <img src="${product.img}" alt="${product.title}">
+                <div class="product-details">
+                    <p class="product-title">${product.title}</p>
+                    <p class="product-quantity">Quantity: ${product.qty}</p>
                 </div>
-        
-                <div class="order-id">
-                    <p>Order ID:
-                    <strong>
-                    ${orderId}
-                    </strong>
-                    </p>
-                </div>
-                 <div class="order-id">
-                    <p>Order Total:
-                    <strong>
-                   $${Number(discountedPrice)}
-                    </strong>
-                    </p>
-                </div>
-        
-                ${
-                    order && order.map(product => {
-                        if (!product?._id) return '';
-                        return `
-                            <div class="product">
-                                <div style="max-width:150px;max-height:150px;min-height:50px;">
-                                    <img src='${product?.img}' alt="Product Image">
-                                </div>
-                                <div class="product-details" ></div>
-                                    <p class="product-title">${product?.title}</p>
-                                    <p class="product-description">
-                                        Quantity: ${product?.qty}
-                                    </p>
-                                </div>
-                            </div>
-                        `;
-                    }).join('')
-                }
-                
-                <hr/>
-  
-                
-                <div class='font1'>
-                ${
-                `Order Total:
-                <strong>
-                $${Number(discountedPrice)}
-                </strong>
-                `
-                }
-                </div>
-        
-               
             </div>
-        </body>
-        <footer>
-        <br />
-        <div style='text-align:center;align-items:center;margin:0 auto;'>
-        <p><a href="mailto:info@earchitecture-lb.com">info@earchitecture-lb.com</a></p>
-        <p style='padding-top:2px;padding-bottom:2px;'>+961 81 303139</p>
-        <p><a href="https://earchitecture-lb.com/unsubscribe">unsubscribe</a></p>
+            `).join('')}
         </div>
-      </footer>
-        </html> `;
+
+        <p class="order-total">Order Total: $${Number(discountedPrice).toFixed(2)}</p>
+
+        <div class="cta-buttons">
+            <a href="https://wa.me/+96181303139" style="background-color: #28a745;">Contact Us</a>
+            <a href="https://earchitecture-lb.com/" style="background-color: #007bff;">Visit Our Website</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Email: <a href="mailto:info@earchitecture-lb.com">info@earchitecture-lb.com</a></p>
+        <p>Phone: +961 81 303139</p>
+        <p><a href="https://earchitecture-lb.com/unsubscribe">Unsubscribe</a></p>
+    </footer>
+</body>
+</html> `;
 
         // Send the email
         const info = await transporter.sendMail({
