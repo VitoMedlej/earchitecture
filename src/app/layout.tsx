@@ -62,6 +62,115 @@ export default function Layout({children} : {
           gtag('config', 'G-TDEM2DVPJ6');
         `}
       </Script>
+
+      <Script id="structured-data" type="application/ld+json" strategy="afterInteractive">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Aluminum Trays",
+      "item": "https://www.earchitecture-lb.com/aluminum%20trays/products"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Bathroom Accessories",
+      "item": "https://www.earchitecture-lb.com/bathroom%20accessories/products"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Bookends",
+      "item": "https://www.earchitecture-lb.com/bookends/products"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Christmas Collection",
+      "item": "https://www.earchitecture-lb.com/christmas%20collection/products"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Coat Hangers",
+      "item": "https://www.earchitecture-lb.com/coat%20hangers/products"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "Firewood Storage",
+      "item": "https://www.earchitecture-lb.com/firewood%20storage/products"
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "name": "Key Racks",
+      "item": "https://www.earchitecture-lb.com/key%20racks/products"
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "name": "Kitchen Accessories",
+      "item": "https://www.earchitecture-lb.com/kitchen%20accessories/products"
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "name": "Metal Furniture",
+      "item": "https://www.earchitecture-lb.com/metal%20furniture/products"
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "name": "Plant Boxes",
+      "item": "https://www.earchitecture-lb.com/plant%20boxes/products"
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "name": "Shelves",
+      "item": "https://www.earchitecture-lb.com/shelves/products"
+    },
+    {
+      "@type": "ListItem",
+      "position": 12,
+      "name": "Tables",
+      "item": "https://www.earchitecture-lb.com/tables/products"
+    },
+    {
+      "@type": "ListItem",
+      "position": 13,
+      "name": "Umbrella Stands",
+      "item": "https://www.earchitecture-lb.com/umbrella%20stands/products"
+    },
+    {
+      "@type": "ListItem",
+      "position": 14,
+      "name": "Wall Art",
+      "item": "https://www.earchitecture-lb.com/wall%20art/products"
+    },
+    {
+      "@type": "ListItem",
+      "position": 15,
+      "name": "Wall Clocks",
+      "item": "https://www.earchitecture-lb.com/wall%20clocks/products"
+    },
+    {
+      "@type": "ListItem",
+      "position": 16,
+      "name": "Wine Storage",
+      "item": "https://www.earchitecture-lb.com/wine%20storage/products"
+    }
+  ]
+}
+`}
+</Script>
+
+
            </head>
 
             <body className='relative bg3'>

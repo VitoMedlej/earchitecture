@@ -24,19 +24,100 @@ export async function GET() {
   <url>
     <loc>https://www.earchitecture-lb.com/about</loc>
     <lastmod>2024-12-05T10:02:12+00:00</lastmod>
-    <priority>0.80</priority>
+    <priority>0.99</priority>
   </url>
   <url>
+
     <loc>https://www.earchitecture-lb.com/collection/products</loc>
     <lastmod>2024-12-05T10:02:12+00:00</lastmod>
-    <priority>0.80</priority>
+    <priority>0.95</priority>
   </url>
+  <url>
+  <loc>https://www.earchitecture-lb.com/aluminum%20trays/products</loc>
+  <lastmod>2024-12-05T10:02:12+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.earchitecture-lb.com/bathroom%20accessories/products</loc>
+  <lastmod>2024-12-05T10:02:12+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.earchitecture-lb.com/bookends/products</loc>
+  <lastmod>2024-12-05T10:02:12+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.earchitecture-lb.com/christmas%20collection/products</loc>
+  <lastmod>2024-12-05T10:02:12+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.earchitecture-lb.com/coat%20hangers/products</loc>
+  <lastmod>2024-12-05T10:02:12+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.earchitecture-lb.com/firewood%20storage/products</loc>
+  <lastmod>2024-12-05T10:02:12+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.earchitecture-lb.com/key%20racks/products</loc>
+  <lastmod>2024-12-05T10:02:12+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.earchitecture-lb.com/kitchen%20accessories/products</loc>
+  <lastmod>2024-12-05T10:02:12+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.earchitecture-lb.com/metal%20furniture/products</loc>
+  <lastmod>2024-12-05T10:02:12+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.earchitecture-lb.com/plant%20boxes/products</loc>
+  <lastmod>2024-12-05T10:02:12+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.earchitecture-lb.com/shelves/products</loc>
+  <lastmod>2024-12-05T10:02:12+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.earchitecture-lb.com/tables/products</loc>
+  <lastmod>2024-12-05T10:02:12+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.earchitecture-lb.com/umbrella%20stands/products</loc>
+  <lastmod>2024-12-05T10:02:12+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.earchitecture-lb.com/wall%20art/products</loc>
+  <lastmod>2024-12-05T10:02:12+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.earchitecture-lb.com/wall%20clocks/products</loc>
+  <lastmod>2024-12-05T10:02:12+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.earchitecture-lb.com/wine%20storage/products</loc>
+  <lastmod>2024-12-05T10:02:12+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
   ${ids
     .map(
       (id: string) => `
   <url>
     <loc>${BASE_URL}product/${id}</loc>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>`
     )
     .join('')}
