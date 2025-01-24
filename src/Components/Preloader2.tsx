@@ -19,7 +19,6 @@ const Preloader2 = ({ data, totalPages, categories }: any) => {
     const searchParams = useSearchParams();
     const type = searchParams.get("type");
     const page = searchParams.get("page");
-    console.log('page: ', page);
     
     const subCategory = searchParams.get("subCategory");
   

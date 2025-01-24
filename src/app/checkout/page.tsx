@@ -17,6 +17,7 @@ import { server } from '@/Utils/Server';
 import { loadState, saveState } from '@/Utils/LocalstorageFn';
 import useDiscount from '@/Hooks/useDiscount';
 import totalCal from '@/Utils/totalCal';
+import { CircularProgress } from '@mui/material';
 
 
 
@@ -39,11 +40,10 @@ const theme = createTheme();
 
 export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
+  const [isLoading, setLoading] = React.useState(false);
   const [orderNumber, setOrderNumber] = React.useState(null);
   const products = loadState('VZJo2p4j1op2cgfG221zGG');
-  console.log('products: ', products);
   const {totalPrice, deliveryCharge} = totalCal(products); 
-  console.log('deliveryCharge: ', deliveryCharge);
   
 
   const {isFirstOrder} = useDiscount(totalPrice)
@@ -84,12 +84,13 @@ export default function Checkout() {
 
 
     const saveOrder = async () => {
-      
+      try {
+   
+      setLoading(true);
      const orderTotal = Number(totalPrice + deliveryCharge).toFixed(2)
       // const total = 10
       if (products && info && totalPrice) {
 
-        // saveState('order',{info,products,total})
         const rawResponse = await fetch(`${server}/api/save-order`, {
             method: 'POST',
             headers: {
@@ -99,11 +100,20 @@ export default function Checkout() {
             body: JSON.stringify({order:{info,products,totalPrice,isFirstOrder,orderTotal}})
         });
   const content = await rawResponse.json();
-        setOrderNumber(content?.orderNumber)
+  // console.log('content: ', content);
+        setOrderNumber(content?.orderId)
     saveState('VZJo2p4j1op2cgfG221zGG',null)
   saveState('Vjq2zFFF1Z',null)
   localStorage.setItem('isFirstOrder1', 'false');
 
+  
+
+}
+
+setLoading(false);
+}
+catch(e){
+setLoading(false);
 
 }
   }
@@ -140,9 +150,16 @@ export default function Checkout() {
               <Typography variant="h5" gutterBottom>
                 Thank you for your order.
               </Typography>
-              <Typography variant="subtitle1">
-              {`Your order has been recorded! Your order number is ${orderNumber}. We will message you soon, so please stay alert.`}
-              </Typography>
+              {isLoading ? (
+                <Box className='centered'>
+
+  <CircularProgress />
+                </Box>
+) : (
+  <Typography variant="subtitle1">
+    {`Your order has been recorded! Your order number is ${orderNumber}. We will message you soon, so please stay alert.`}
+  </Typography>
+)}
             </React.Fragment>
           ) : (
             <React.Fragment>
